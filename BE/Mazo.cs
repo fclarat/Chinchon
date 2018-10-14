@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    class Mazo
+    public class Mazo
     {
 
         private List<Carta> cartas;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    class Carta
+    public class Carta
     {
 
         private int id;

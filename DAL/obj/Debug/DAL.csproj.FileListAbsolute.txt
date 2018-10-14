@@ -1,0 +1,4 @@
+C:\Users\fclar\OneDrive\Documentos\facultad\Proramacion 4\chinchon\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\Users\fclar\OneDrive\Documentos\facultad\Proramacion 4\chinchon\DAL\obj\Debug\DAL.Properties.Resources.resources
+C:\Users\fclar\OneDrive\Documentos\facultad\Proramacion 4\chinchon\DAL\obj\Debug\DAL.csproj.GenerateResource.cache
+C:\Users\fclar\OneDrive\Documentos\facultad\Proramacion 4\chinchon\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache

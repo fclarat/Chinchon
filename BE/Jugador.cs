@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    class Jugador
+    public class Jugador
     {
         private int id;
 
@@ -18,7 +18,7 @@ namespace BE
 
         private Mano mano = new Mano();
 
-        public Mano Mano
+        public Mano MANO
         {
             get { return mano; }
             set { mano = value; }

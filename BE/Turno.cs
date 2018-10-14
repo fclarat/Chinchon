@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    class Turno
+    public class Turno
     {
         private int indice;
 
-        public int Indice
+        public int INDICE
         {
             get { return indice; }
             set { indice = value; }
         }
 
 
-        public Jugador JugadorActual
+        public Jugador JUGADORATUAL
         {
             get { return jugadores[indice]; }
 
@@ -26,7 +26,7 @@ namespace BE
 
         private List<Jugador> jugadores = new List<Jugador>();
 
-        public List<Jugador> Jugadores
+        public List<Jugador> JUGADORES
         {
             get { return jugadores; }
 

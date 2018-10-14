@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    class Mano
+    public class Mano
     {
-        private List<Carta> _cartas;
+        private List<Carta> cartas = new List<Carta>();
 
-        public List<Carta> Cartas
+        public List<Carta> CARTAS
         {
-            get { return _cartas; }
-            set { _cartas = value; }
+            get { return cartas; }
+            set { cartas = value; }
         }
     }
 }

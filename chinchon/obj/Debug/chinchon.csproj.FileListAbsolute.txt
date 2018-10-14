@@ -1,0 +1,5 @@
+C:\Users\fclar\OneDrive\Documentos\facultad\Proramacion 4\chinchon\chinchon\obj\Debug\chinchon.csprojAssemblyReference.cache
+C:\Users\fclar\OneDrive\Documentos\facultad\Proramacion 4\chinchon\chinchon\obj\Debug\chinchon.Form1.resources
+C:\Users\fclar\OneDrive\Documentos\facultad\Proramacion 4\chinchon\chinchon\obj\Debug\chinchon.Properties.Resources.resources
+C:\Users\fclar\OneDrive\Documentos\facultad\Proramacion 4\chinchon\chinchon\obj\Debug\chinchon.csproj.GenerateResource.cache
+C:\Users\fclar\OneDrive\Documentos\facultad\Proramacion 4\chinchon\chinchon\obj\Debug\chinchon.csproj.CoreCompileInputs.cache

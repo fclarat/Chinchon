@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    class Descarte
+    public class Descarte
     {
         private List<Carta> cartas;
 
@@ -15,5 +15,6 @@ namespace BE
             get { return cartas; }
             set { cartas = value; }
         }
+
     }
 }
