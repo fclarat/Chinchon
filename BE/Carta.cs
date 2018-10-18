@@ -32,5 +32,18 @@ namespace BE
             get { return numero; }
             set { numero = value; }
         }
+
+        private string reverso = "Reverso Carta";
+                                
+        public string REVERSO
+        {
+            get { return reverso; }
+        }
+
+
+        public override string ToString()
+        {
+            return this.PALO + " " + this.NUMERO;
+        }
     }
 }

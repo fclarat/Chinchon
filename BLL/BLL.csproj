@@ -49,6 +49,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Descarte.cs" />
+    <Compile Include="Jugador.cs" />
     <Compile Include="Mazo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Turno.cs" />

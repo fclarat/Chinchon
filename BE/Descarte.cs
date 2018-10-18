@@ -8,7 +8,7 @@ namespace BE
 {
     public class Descarte
     {
-        private List<Carta> cartas;
+        private List<Carta> cartas = new List<Carta>();
 
         public List<Carta> CARTAS
         {
