@@ -9,3 +9,5 @@ C:\Users\fclar\OneDrive\Documentos\facultad\Proramacion 4\chinchon\BLL\obj\Debug
 C:\Users\fclar\OneDrive\Documentos\facultad\Proramacion 4\chinchon\BLL\obj\Debug\BLL.csproj.CopyComplete
 C:\Users\fclar\OneDrive\Documentos\facultad\Proramacion 4\chinchon\BLL\obj\Debug\BLL.dll
 C:\Users\fclar\OneDrive\Documentos\facultad\Proramacion 4\chinchon\BLL\obj\Debug\BLL.pdb
+C:\Users\fclar\OneDrive\Documentos\facultad\Proramacion 4\chinchon\BLL\bin\Debug\DAL.dll
+C:\Users\fclar\OneDrive\Documentos\facultad\Proramacion 4\chinchon\BLL\bin\Debug\DAL.pdb

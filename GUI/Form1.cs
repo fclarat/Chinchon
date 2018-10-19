@@ -30,16 +30,21 @@ namespace GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            jugador1 = new BE.Jugador();
-            jugador1.ID = 1;
-            jugador2 = new BE.Jugador();
-            jugador2.ID = 2;
+            //jugador1 = new BE.Jugador();
+            //jugador1.ID = 8;
+            //jugador1.USUARIO = "test pepe";
+            //jugador2 = new BE.Jugador();
+            //jugador2.ID = 9;
+            //jugador2.USUARIO = "test Negrito";
+            //turno.JUGADORES.Add(jugador1);
+            //turno.JUGADORES.Add(jugador2);
+
+
             mazoAction = new BLL.Mazo();
-            mazo.CARTAS = mazoAction.PruebaFuncionamiento().ToList();
+            //mazo.CARTAS = mazoAction.PruebaFuncionamiento().ToList();
+            mazo.CARTAS = mazoAction.LlenarMazo().ToList();
 
 
-            turno.JUGADORES.Add(jugador1);
-            turno.JUGADORES.Add(jugador2);
 
             mazoAction.Repartir(turno, mazo, jugadorAction);
 
@@ -50,6 +55,7 @@ namespace GUI
             btnRobar.Enabled = true;
             btnRobarDes.Enabled = true;
             btnDescartar.Enabled = false;
+            btnCortar.Enabled = false;
             enlazar();
 
         }
@@ -72,12 +78,12 @@ namespace GUI
 
             if (pudoRobar)
             {
-                changeBtnEnable();
-                enlazar();
+                MessageBox.Show("No hay cartas en el descarte, por favor robá del mazo");
             }
             else
             {
-                MessageBox.Show("No hay cartas en el descarte, por favor robá del mazo");
+                changeBtnEnable();
+                enlazar();
             }
 
         }
@@ -102,9 +108,12 @@ namespace GUI
         #region LOAD y Enlazar
         private void Form1_Load(object sender, EventArgs e)
         {
+            ((Control)this.tabGame).Enabled = false;
             btnDescartar.Enabled = false;
             btnRobar.Enabled = false;
             btnRobarDes.Enabled = false;
+            btnCortar.Enabled = false;
+
         }
 
         private void changeBtnEnable()
@@ -112,12 +121,15 @@ namespace GUI
             btnDescartar.Enabled = !btnDescartar.Enabled;
             btnRobar.Enabled = !btnRobar.Enabled;
             btnRobarDes.Enabled = !btnRobarDes.Enabled;
+            btnCortar.Enabled = !btnCortar.Enabled;
         }
 
         void enlazarJugadores()
         {
             listJugadores.DataSource = null;
             listJugadores.DataSource = turno.JUGADORES;
+
+            listJugadores.DisplayMember = "USUARIO";
 
         }
 
@@ -149,7 +161,7 @@ namespace GUI
             enlazarDescarte();
             enlazarJugadores();
             enlazarJugador();
-            labelId.Text = turno.JUGADORATUAL.ID.ToString();
+            labelId.Text = turno.JUGADORATUAL.USUARIO.ToString();
         }
 
 
@@ -170,6 +182,49 @@ namespace GUI
             }
 
 
+        }
+
+        private void btnIngresar_Click(object sender, EventArgs e)
+        {
+            if(turno.JUGADORES.Count() > 3)
+            {
+                MessageBox.Show("La cantidad Maxima de jugadores es 4");
+
+            }
+            else
+            {
+                if (jugadorAction.login(txtUser.Text, txtPass.Text, turno))
+                {
+                    MessageBox.Show("Jugador agregado a la partida");
+                    txtUser.Text = "";
+                    txtPass.Text = "";
+                }
+                else
+                {
+                    MessageBox.Show("Jugador NO agregado a la partida");
+                }
+
+                if (turno.JUGADORES.Count() > 1)
+                {
+                    ((Control)this.tabGame).Enabled = true;
+                }
+            }
+
+        }
+
+        private void btnCrear_Click(object sender, EventArgs e)
+        {
+            if (jugadorAction.crear(txtCrearUser.Text, txtCrearPass.Text))
+            {
+                MessageBox.Show("Jugador Creado a la partida");
+                txtUser.Text = txtCrearUser.Text;
+                txtPass.Text = txtCrearPass.Text;
+            }
+            else
+            {
+                MessageBox.Show("Tuvimos un problema por favor intentelo más tarde");
+
+            }
         }
     }
 }

@@ -50,7 +50,7 @@ namespace BLL
         {
 
             jug.MANO.CARTAS.Remove(carta);
-            des.CARTAS.Add(carta);
+            des.CARTAS.Insert(0,carta);
         }
 
         private List<BE.Carta> ordenarMano(List<BE.Carta> cartas)
@@ -58,6 +58,42 @@ namespace BLL
             return cartas.OrderBy(x => x.PALO).ThenBy(x => x.NUMERO).ToList();
 
         }
+
+
+        public bool login(string user, string pass, BE.Turno turno)
+        {
+            DAL.MP_Jugador mp_jugador = new DAL.MP_Jugador();
+            BE.Jugador jug;
+            bool logueo = false;
+
+            jug = mp_jugador.IngresarUsuario(user, pass);
+
+            if (jug != null )
+            {
+                turno.JUGADORES.Add(jug);
+                logueo = true;
+            }
+            
+            return logueo;
+        }
+
+        public bool crear(string user, string pass)
+        {
+            DAL.MP_Jugador mp_jugador = new DAL.MP_Jugador();
+            int fa = 0;
+            bool creado = false;
+
+            fa = mp_jugador.InsertarJugador(user, pass);
+
+            if (fa > 0)
+            {
+                creado = true;
+            }
+
+            return creado;
+        }
+
+        #region CORTAR
 
         public bool cortar (BE.Jugador jug, BE.Carta carta)
         {
@@ -183,6 +219,8 @@ namespace BLL
 
             return cartas;
         }
+
+        #endregion
 
     }
 }

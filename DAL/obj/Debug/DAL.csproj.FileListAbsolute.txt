@@ -2,3 +2,10 @@ C:\Users\fclar\OneDrive\Documentos\facultad\Proramacion 4\chinchon\DAL\obj\Debug
 C:\Users\fclar\OneDrive\Documentos\facultad\Proramacion 4\chinchon\DAL\obj\Debug\DAL.Properties.Resources.resources
 C:\Users\fclar\OneDrive\Documentos\facultad\Proramacion 4\chinchon\DAL\obj\Debug\DAL.csproj.GenerateResource.cache
 C:\Users\fclar\OneDrive\Documentos\facultad\Proramacion 4\chinchon\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\fclar\OneDrive\Documentos\facultad\Proramacion 4\chinchon\DAL\bin\Debug\DAL.dll
+C:\Users\fclar\OneDrive\Documentos\facultad\Proramacion 4\chinchon\DAL\bin\Debug\DAL.pdb
+C:\Users\fclar\OneDrive\Documentos\facultad\Proramacion 4\chinchon\DAL\bin\Debug\BE.dll
+C:\Users\fclar\OneDrive\Documentos\facultad\Proramacion 4\chinchon\DAL\bin\Debug\BE.pdb
+C:\Users\fclar\OneDrive\Documentos\facultad\Proramacion 4\chinchon\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\fclar\OneDrive\Documentos\facultad\Proramacion 4\chinchon\DAL\obj\Debug\DAL.dll
+C:\Users\fclar\OneDrive\Documentos\facultad\Proramacion 4\chinchon\DAL\obj\Debug\DAL.pdb

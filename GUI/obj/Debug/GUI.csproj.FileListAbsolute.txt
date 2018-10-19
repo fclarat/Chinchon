@@ -13,3 +13,5 @@ C:\Users\fclar\OneDrive\Documentos\facultad\Proramacion 4\chinchon\GUI\obj\Debug
 C:\Users\fclar\OneDrive\Documentos\facultad\Proramacion 4\chinchon\GUI\obj\Debug\GUI.csproj.CopyComplete
 C:\Users\fclar\OneDrive\Documentos\facultad\Proramacion 4\chinchon\GUI\obj\Debug\GUI.exe
 C:\Users\fclar\OneDrive\Documentos\facultad\Proramacion 4\chinchon\GUI\obj\Debug\GUI.pdb
+C:\Users\fclar\OneDrive\Documentos\facultad\Proramacion 4\chinchon\GUI\bin\Debug\DAL.dll
+C:\Users\fclar\OneDrive\Documentos\facultad\Proramacion 4\chinchon\GUI\bin\Debug\DAL.pdb

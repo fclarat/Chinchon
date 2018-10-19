@@ -16,6 +16,15 @@ namespace BE
             set { id = value; }
         }
 
+        private string usuario;
+
+        public string USUARIO
+        {
+            get { return usuario; }
+            set { usuario = value; }
+        }
+
+
         private Mano mano = new Mano();
 
         public Mano MANO
