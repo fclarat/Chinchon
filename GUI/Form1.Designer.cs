@@ -41,19 +41,21 @@
             this.btnCortar = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabLogin = new System.Windows.Forms.TabPage();
-            this.tabGame = new System.Windows.Forms.TabPage();
-            this.btnIngresar = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtUser = new System.Windows.Forms.TextBox();
-            this.txtPass = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtCrearPass = new System.Windows.Forms.TextBox();
             this.txtCrearUser = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.btnCrear = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtPass = new System.Windows.Forms.TextBox();
+            this.txtUser = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnIngresar = new System.Windows.Forms.Button();
+            this.tabGame = new System.Windows.Forms.TabPage();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btnFinalizar = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabLogin.SuspendLayout();
             this.tabGame.SuspendLayout();
@@ -63,7 +65,7 @@
             // 
             this.listJugadores.FormattingEnabled = true;
             this.listJugadores.ItemHeight = 31;
-            this.listJugadores.Location = new System.Drawing.Point(133, 264);
+            this.listJugadores.Location = new System.Drawing.Point(113, 404);
             this.listJugadores.Name = "listJugadores";
             this.listJugadores.Size = new System.Drawing.Size(462, 221);
             this.listJugadores.TabIndex = 6;
@@ -73,7 +75,7 @@
             this.listMazo.DisplayMember = "Carta";
             this.listMazo.FormattingEnabled = true;
             this.listMazo.ItemHeight = 31;
-            this.listMazo.Location = new System.Drawing.Point(628, 264);
+            this.listMazo.Location = new System.Drawing.Point(676, 264);
             this.listMazo.Name = "listMazo";
             this.listMazo.Size = new System.Drawing.Size(462, 221);
             this.listMazo.TabIndex = 5;
@@ -85,7 +87,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(387, 127);
             this.button1.TabIndex = 4;
-            this.button1.Text = "Iniciar partida";
+            this.button1.Text = "Repartir";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -112,7 +114,7 @@
             // 
             this.listDescarte.FormattingEnabled = true;
             this.listDescarte.ItemHeight = 31;
-            this.listDescarte.Location = new System.Drawing.Point(628, 520);
+            this.listDescarte.Location = new System.Drawing.Point(676, 520);
             this.listDescarte.Name = "listDescarte";
             this.listDescarte.Size = new System.Drawing.Size(462, 221);
             this.listDescarte.TabIndex = 9;
@@ -142,7 +144,7 @@
             // 
             this.labelId.AutoSize = true;
             this.labelId.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelId.Location = new System.Drawing.Point(1914, 62);
+            this.labelId.Location = new System.Drawing.Point(1938, 62);
             this.labelId.Name = "labelId";
             this.labelId.Size = new System.Drawing.Size(106, 63);
             this.labelId.TabIndex = 12;
@@ -199,85 +201,6 @@
             this.tabLogin.TabIndex = 0;
             this.tabLogin.Text = "Login/Register";
             this.tabLogin.UseVisualStyleBackColor = true;
-            // 
-            // tabGame
-            // 
-            this.tabGame.Controls.Add(this.listMazo);
-            this.tabGame.Controls.Add(this.btnCortar);
-            this.tabGame.Controls.Add(this.button1);
-            this.tabGame.Controls.Add(this.btnDescartar);
-            this.tabGame.Controls.Add(this.listJugadores);
-            this.tabGame.Controls.Add(this.labelId);
-            this.tabGame.Controls.Add(this.listDescarte);
-            this.tabGame.Controls.Add(this.label1);
-            this.tabGame.Controls.Add(this.listMano);
-            this.tabGame.Controls.Add(this.btnRobarDes);
-            this.tabGame.Controls.Add(this.btnRobar);
-            this.tabGame.Location = new System.Drawing.Point(10, 48);
-            this.tabGame.Name = "tabGame";
-            this.tabGame.Padding = new System.Windows.Forms.Padding(3);
-            this.tabGame.Size = new System.Drawing.Size(2455, 1060);
-            this.tabGame.TabIndex = 1;
-            this.tabGame.Text = "Mesa de juego";
-            this.tabGame.UseVisualStyleBackColor = true;
-            // 
-            // btnIngresar
-            // 
-            this.btnIngresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIngresar.Location = new System.Drawing.Point(413, 541);
-            this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(255, 159);
-            this.btnIngresar.TabIndex = 0;
-            this.btnIngresar.Text = "Ingresar";
-            this.btnIngresar.UseVisualStyleBackColor = true;
-            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(249, 347);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(169, 46);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Usuario:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(249, 445);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(207, 46);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Password:";
-            // 
-            // txtUser
-            // 
-            this.txtUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUser.Location = new System.Drawing.Point(489, 341);
-            this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(338, 53);
-            this.txtUser.TabIndex = 3;
-            // 
-            // txtPass
-            // 
-            this.txtPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPass.Location = new System.Drawing.Point(489, 442);
-            this.txtPass.Name = "txtPass";
-            this.txtPass.PasswordChar = '*';
-            this.txtPass.Size = new System.Drawing.Size(338, 53);
-            this.txtPass.TabIndex = 4;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(352, 240);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(401, 46);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Agregarte a la partida";
             // 
             // label5
             // 
@@ -337,6 +260,105 @@
             this.btnCrear.UseVisualStyleBackColor = true;
             this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(352, 240);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(401, 46);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Agregarte a la partida";
+            // 
+            // txtPass
+            // 
+            this.txtPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPass.Location = new System.Drawing.Point(489, 442);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.PasswordChar = '*';
+            this.txtPass.Size = new System.Drawing.Size(338, 53);
+            this.txtPass.TabIndex = 4;
+            // 
+            // txtUser
+            // 
+            this.txtUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUser.Location = new System.Drawing.Point(489, 341);
+            this.txtUser.Name = "txtUser";
+            this.txtUser.Size = new System.Drawing.Size(338, 53);
+            this.txtUser.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(249, 445);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(207, 46);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Password:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(249, 347);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(169, 46);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Usuario:";
+            // 
+            // btnIngresar
+            // 
+            this.btnIngresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIngresar.Location = new System.Drawing.Point(413, 541);
+            this.btnIngresar.Name = "btnIngresar";
+            this.btnIngresar.Size = new System.Drawing.Size(255, 159);
+            this.btnIngresar.TabIndex = 0;
+            this.btnIngresar.Text = "Ingresar";
+            this.btnIngresar.UseVisualStyleBackColor = true;
+            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
+            // 
+            // tabGame
+            // 
+            this.tabGame.Controls.Add(this.btnFinalizar);
+            this.tabGame.Controls.Add(this.label8);
+            this.tabGame.Controls.Add(this.listMazo);
+            this.tabGame.Controls.Add(this.btnCortar);
+            this.tabGame.Controls.Add(this.button1);
+            this.tabGame.Controls.Add(this.btnDescartar);
+            this.tabGame.Controls.Add(this.listJugadores);
+            this.tabGame.Controls.Add(this.labelId);
+            this.tabGame.Controls.Add(this.listDescarte);
+            this.tabGame.Controls.Add(this.label1);
+            this.tabGame.Controls.Add(this.listMano);
+            this.tabGame.Controls.Add(this.btnRobarDes);
+            this.tabGame.Controls.Add(this.btnRobar);
+            this.tabGame.Location = new System.Drawing.Point(10, 48);
+            this.tabGame.Name = "tabGame";
+            this.tabGame.Padding = new System.Windows.Forms.Padding(3);
+            this.tabGame.Size = new System.Drawing.Size(2455, 1060);
+            this.tabGame.TabIndex = 1;
+            this.tabGame.Text = "Mesa de juego";
+            this.tabGame.UseVisualStyleBackColor = true;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(113, 319);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(268, 32);
+            this.label8.TabIndex = 15;
+            this.label8.Text = "Puntos de la partida";
+            // 
+            // btnFinalizar
+            // 
+            this.btnFinalizar.Location = new System.Drawing.Point(1070, 924);
+            this.btnFinalizar.Name = "btnFinalizar";
+            this.btnFinalizar.Size = new System.Drawing.Size(303, 81);
+            this.btnFinalizar.TabIndex = 16;
+            this.btnFinalizar.Text = "Finalizar juego";
+            this.btnFinalizar.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
@@ -383,6 +405,8 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnCrear;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnFinalizar;
     }
 }
 

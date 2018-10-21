@@ -33,7 +33,27 @@ namespace BE
             set { mano = value; }
         }
 
+        private int puntosPartida = 0;
 
+        public int PUNTOSPARTIDA
+        {
+            get { return puntosPartida; }
+            set { puntosPartida = value; }
+        }
+
+        private int puntosHistorico = 0;
+
+        public int PUNTOSHISTORICOS
+        {
+            get { return puntosHistorico; }
+            set { puntosHistorico = value; }
+        }
+
+
+        public override string ToString()
+        {
+            return this.USUARIO + ": " + this.puntosPartida;
+        }
 
     }
 }

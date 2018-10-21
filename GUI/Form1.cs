@@ -13,14 +13,15 @@ namespace GUI
     public partial class Form1 : Form
     {
 
-        BE.Jugador jugador1;
-        BE.Jugador jugador2;
+        //BE.Jugador jugador1;
+        //BE.Jugador jugador2;
         BLL.Mazo mazoAction;
         BE.Mazo mazo = new BE.Mazo();
         BE.Descarte descarte = new BE.Descarte();
         BE.Turno turno = new BE.Turno();
         BLL.Turno turnoAction = new BLL.Turno();
         BLL.Jugador jugadorAction = new BLL.Jugador();
+        BLL.Punto puntoAction = new BLL.Punto();
 
         public Form1()
         {
@@ -49,9 +50,10 @@ namespace GUI
             mazoAction.Repartir(turno, mazo, jugadorAction);
 
 
+            //TODO RANDOM para que arranque un random de la lista?
             turno.INDICE = 0;
 
-
+            button1.Enabled = false;
             btnRobar.Enabled = true;
             btnRobarDes.Enabled = true;
             btnDescartar.Enabled = false;
@@ -129,7 +131,7 @@ namespace GUI
             listJugadores.DataSource = null;
             listJugadores.DataSource = turno.JUGADORES;
 
-            listJugadores.DisplayMember = "USUARIO";
+            //listJugadores.DisplayMember = "USUARIO";
 
         }
 
@@ -170,11 +172,14 @@ namespace GUI
         private void btnCortar_Click(object sender, EventArgs e)
         {
             //Carta con la que corta
-            BE.Carta carta = (BE.Carta)listMano.SelectedItem;
+                BE.Carta carta = (BE.Carta)listMano.SelectedItem;
 
             if (jugadorAction.cortar(turno.JUGADORATUAL, carta))
             {
                 MessageBox.Show("CORTASTE");
+                puntoAction.cortarPartida(turno);
+                button1.Enabled = true;
+                enlazar();
             }
             else
             {

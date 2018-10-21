@@ -23,7 +23,7 @@ namespace BLL
                 error = true;
             }
 
-            //Todo mezclar descarte en el mazo?
+            //TODO mezclar descarte en el mazo cuando el mazo se quede sin cartas?
             return error;
 
         }
@@ -36,6 +36,7 @@ namespace BLL
             {
                 jug.MANO.CARTAS.Add(des.CARTAS[0]);
                 des.CARTAS.RemoveAt(0);
+                jug.MANO.CARTAS = this.ordenarMano(jug.MANO.CARTAS);
             }
             else
             {

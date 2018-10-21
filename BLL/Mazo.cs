@@ -30,6 +30,7 @@ namespace BLL
 
             foreach(BE.Jugador jug in turno.JUGADORES)
             {
+                jug.MANO.CARTAS.Clear();
                 for(int i=0; i < 7; i++)
                 {
                     jugAction.robarDelMazo(mazo, jug);
