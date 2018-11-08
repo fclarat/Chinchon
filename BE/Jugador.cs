@@ -49,6 +49,13 @@ namespace BE
             set { puntosHistorico = value; }
         }
 
+        private int partidasJugadas = 0;
+
+        public int PARTIDASJUGADAS
+        {
+            get { return partidasJugadas; }
+            set { partidasJugadas = value; }
+        }
 
         public override string ToString()
         {

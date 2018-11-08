@@ -44,5 +44,39 @@ namespace DAL
             return fa;
         }
 
+        public int sumarPuntosYPartida(int id, int puntos)
+        {
+            List<SqlParameter> parametros = new List<SqlParameter>();
+            parametros.Add(acceso.CrearParametro("@id", id));
+            parametros.Add(acceso.CrearParametro("@puntos", puntos));
+            acceso.Abrir();
+            int fa = acceso.Escribir("actualizar_puntos_partidas", parametros);
+            acceso.Cerrar();
+            return fa;
+        }
+
+        public List<BE.Jugador> listarJugadores()
+        {
+            List<BE.Jugador> jugadores = new List<BE.Jugador>();
+            
+            acceso.Abrir();
+            DataTable tabla = acceso.Leer("listar_usuarios", null);
+            acceso.Cerrar();
+            
+            foreach (DataRow registro in tabla.Rows)
+            {
+                BE.Jugador jug = null;
+                jug = new BE.Jugador();
+                jug.ID = int.Parse(registro["id_user"].ToString());
+                jug.USUARIO = registro["usuario"].ToString();
+                jug.PUNTOSHISTORICOS = Int32.Parse(registro["puntos"].ToString());
+                jug.PARTIDASJUGADAS = Int32.Parse(registro["partidas_jugadas"].ToString());
+
+                jugadores.Add(jug);
+            }
+
+            return jugadores;
+        }
+
     }
 }

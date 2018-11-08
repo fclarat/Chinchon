@@ -34,11 +34,6 @@ namespace BLL
                 for(int i=0; i < 7; i++)
                 {
                     jugAction.robarDelMazo(mazo, jug);
-
-                    //Update
-                    //jug.MANO.CARTAS.Add(mazo.CARTAS[0]);
-                    //mazo.CARTAS.RemoveAt(0);
-
                 }
             }
             

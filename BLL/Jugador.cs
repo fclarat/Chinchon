@@ -94,6 +94,13 @@ namespace BLL
             return creado;
         }
 
+        public List<BE.Jugador> ListarTodos()
+        {
+            DAL.MP_Jugador mp_jugador = new DAL.MP_Jugador();
+
+            return mp_jugador.listarJugadores();
+        }
+
         #region CORTAR
 
         public bool cortar (BE.Jugador jug, BE.Carta carta)
@@ -101,13 +108,41 @@ namespace BLL
             bool cortarValido = false;
 
 
-            List<BE.Carta> manoAux = jug.MANO.CARTAS;
+            List<BE.Carta> manoAux = new List<BE.Carta>(jug.MANO.CARTAS);
+            List<BE.Carta> manoAux1 = new List<BE.Carta>(jug.MANO.CARTAS);
+            List<BE.Carta> manoAux2 = new List<BE.Carta>(jug.MANO.CARTAS);
+            List<BE.Carta> manoAux3 = new List<BE.Carta>(jug.MANO.CARTAS);
+
+            //Remuevo la carta con la que corto
             manoAux.Remove(carta);
 
             manoAux = this.Pierna(manoAux);
+
+            //Si la pierna tiene 4 cartas verifico si las 3 subpiernas
+            // tambien pueden realizar el corte
+            if(manoAux.Count() == 3)
+            {
+
+
+                manoAux1 = this.SubPierna(manoAux1, 0);
+                manoAux1 = this.Escalera(manoAux1);
+
+                manoAux2 = this.SubPierna(manoAux2, 1);
+                manoAux2 = this.Escalera(manoAux2);
+
+                manoAux3 = this.SubPierna(manoAux3, 2);
+                manoAux3 = this.Escalera(manoAux3);
+
+                if (manoAux1.Count() <= 1 || manoAux2.Count() <= 1 || manoAux3.Count() <= 1 )
+                {
+                    cortarValido = true;
+                }
+
+            }
+
             manoAux = this.Escalera(manoAux);
 
-            if(manoAux.Count() <= 1 )
+            if (manoAux.Count() <= 1 )
             {
                 cortarValido = true;
             }
@@ -140,6 +175,7 @@ namespace BLL
         {
             List<BE.Carta> cartasASacar = this.verificarPorNumero(cartas);
 
+            //verifico 1ra pierna.
             if (cartasASacar.Count() > 1)
             {
                 foreach (BE.Carta carta in cartasASacar)
@@ -147,10 +183,32 @@ namespace BLL
                     cartas.Remove(carta);
                 }
 
+                //verifico una posible 2da pierna
                 cartasASacar = this.verificarPorNumero(cartas);
                 foreach (BE.Carta carta in cartasASacar)
                 {
                     cartas.Remove(carta);
+                }
+            }
+
+            return cartas;
+        }
+
+        private List<BE.Carta> SubPierna(List<BE.Carta> cartas, int index)
+        {
+            List<BE.Carta> cartasASacar = this.verificarPorNumero(cartas);
+
+            if (cartasASacar.Count() > 1)
+            {
+                int i = 0;
+                foreach (BE.Carta carta in cartasASacar)
+                {
+                    if(index != i)
+                    {
+                        cartas.Remove(carta);
+                    }
+
+                    i++;
                 }
             }
 
@@ -210,6 +268,7 @@ namespace BLL
                         cartas.Remove(carta);
                     }
 
+                    //verifico la segunda escalera
                     cartasASacar = this.VerificarEscalera(cartas, palo);
                     foreach (BE.Carta carta in cartasASacar)
                     {

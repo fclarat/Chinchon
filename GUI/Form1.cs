@@ -22,6 +22,7 @@ namespace GUI
         BLL.Turno turnoAction = new BLL.Turno();
         BLL.Jugador jugadorAction = new BLL.Jugador();
         BLL.Punto puntoAction = new BLL.Punto();
+        PictureBox[] manoImagenes = new PictureBox[8];
 
         public Form1()
         {
@@ -39,23 +40,22 @@ namespace GUI
             //jugador2.USUARIO = "test Negrito";
             //turno.JUGADORES.Add(jugador1);
             //turno.JUGADORES.Add(jugador2);
-
+            //mazo.CARTAS = mazoAction.PruebaFuncionamiento().ToList();  //sin base de datos
 
             mazoAction = new BLL.Mazo();
-            //mazo.CARTAS = mazoAction.PruebaFuncionamiento().ToList();
             mazo.CARTAS = mazoAction.LlenarMazo().ToList();
-
-
 
             mazoAction.Repartir(turno, mazo, jugadorAction);
 
-
-            //TODO RANDOM para que arranque un random de la lista?
             turno.INDICE = 0;
+
+            descarte.CARTAS.RemoveRange(0, descarte.CARTAS.Count());
 
             button1.Enabled = false;
             btnRobar.Enabled = true;
+            imgMazo.Enabled = true;
             btnRobarDes.Enabled = true;
+            imgDescarte.Enabled = true;
             btnDescartar.Enabled = false;
             btnCortar.Enabled = false;
             enlazar();
@@ -113,9 +113,23 @@ namespace GUI
             ((Control)this.tabGame).Enabled = false;
             btnDescartar.Enabled = false;
             btnRobar.Enabled = false;
+            imgMazo.Enabled = false;
             btnRobarDes.Enabled = false;
+            imgDescarte.Enabled = false;
             btnCortar.Enabled = false;
+            imgMazo.Image = Image.FromFile("..\\..\\img\\back.jpg");
 
+            manoImagenes[0] = mano1;
+            manoImagenes[1] = mano2;
+            manoImagenes[2] = mano3;
+            manoImagenes[3] = mano4;
+            manoImagenes[4] = mano5;
+            manoImagenes[5] = mano6;
+            manoImagenes[6] = mano7;
+            manoImagenes[7] = mano8;
+
+
+            mostrarPuntajesTotales();
         }
 
         private void changeBtnEnable()
@@ -124,14 +138,14 @@ namespace GUI
             btnRobar.Enabled = !btnRobar.Enabled;
             btnRobarDes.Enabled = !btnRobarDes.Enabled;
             btnCortar.Enabled = !btnCortar.Enabled;
+            imgMazo.Enabled = !imgMazo.Enabled;
+            imgDescarte.Enabled = !imgDescarte.Enabled;
         }
 
         void enlazarJugadores()
         {
             listJugadores.DataSource = null;
             listJugadores.DataSource = turno.JUGADORES;
-
-            //listJugadores.DisplayMember = "USUARIO";
 
         }
 
@@ -140,7 +154,14 @@ namespace GUI
 
             listMano.DataSource = null;
             listMano.DataSource = turno.JUGADORATUAL.MANO.CARTAS;
+            labelId.Text = turno.JUGADORATUAL.USUARIO.ToString();
 
+            int i = 0;
+            foreach (BE.Carta carta in turno.JUGADORATUAL.MANO.CARTAS)
+            {
+                manoImagenes[i].Image = Image.FromFile("..\\..\\img\\"+carta.PALO+ "\\" + carta.NUMERO + ".jpg");
+                i++;
+            }
         }
 
         void enlazarMazo()
@@ -152,18 +173,37 @@ namespace GUI
 
         void enlazarDescarte()
         {
+            if(descarte.CARTAS.Count() > 0)
+            {
+                imgDescarte.Image = null;
+                imgDescarte.Image = Image.FromFile("..\\..\\img\\" + descarte.CARTAS.First().PALO + "\\" + descarte.CARTAS.First().NUMERO + ".jpg");
+            }
+            else
+            {
+                imgDescarte.Image = null;
+            }
+
+
             listDescarte.DataSource = null;
             listDescarte.DataSource = descarte.CARTAS;
         }
 
+        void desEnlazarImagenesMano()
+        {
+            for (int i=0; i<8; i++ )
+            {
+                manoImagenes[i].Image = null;
+            }
+        }
 
         void enlazar()
         {
+            desEnlazarImagenesMano();
             enlazarMazo();
             enlazarDescarte();
             enlazarJugadores();
             enlazarJugador();
-            labelId.Text = turno.JUGADORATUAL.USUARIO.ToString();
+           
         }
 
 
@@ -178,8 +218,7 @@ namespace GUI
             {
                 MessageBox.Show("CORTASTE");
                 puntoAction.cortarPartida(turno);
-                button1.Enabled = true;
-                enlazar();
+                FinalizarPartida();
             }
             else
             {
@@ -231,6 +270,77 @@ namespace GUI
 
             }
         }
+
+        private void tabLogin_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabGame_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void imgMazo_Click(object sender, EventArgs e)
+        {
+            jugadorAction.robarDelMazo(mazo, turno.JUGADORATUAL);
+            changeBtnEnable();
+            enlazar();
+        }
+
+        private void imgDescarte_Click(object sender, EventArgs e)
+        {
+            bool pudoRobar = false;
+            pudoRobar = jugadorAction.robarDelDescarte(descarte, turno.JUGADORATUAL);
+
+            if (pudoRobar)
+            {
+                MessageBox.Show("No hay cartas en el descarte, por favor robá del mazo");
+            }
+            else
+            {
+                changeBtnEnable();
+                enlazar();
+            }
+        }
+
+        private void btnFinalizar_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("La partida aun no ha terminado, Queres finalizarla?", "FINALIZAR PARTIDA", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                FinalizarPartida();
+            }
+        }
+
+        private void FinalizarPartida()
+        {
+            button1.Enabled = true;
+            btnRobar.Enabled = false;
+            imgMazo.Enabled = false;
+            btnRobarDes.Enabled = false;
+            imgDescarte.Enabled = false;
+            btnDescartar.Enabled = false;
+            btnCortar.Enabled = false;
+            descarte.CARTAS.RemoveRange(0, descarte.CARTAS.Count());
+            turno.JUGADORATUAL.MANO.CARTAS.RemoveRange(0, turno.JUGADORATUAL.MANO.CARTAS.Count());
+            enlazar();
+        }
+
+        private void mostrarPuntajesTotales()
+        {
+
+            gridPuntos.DataSource = jugadorAction.ListarTodos();
+            this.gridPuntos.Columns["ID"].Visible = false;
+            this.gridPuntos.Columns["MANO"].Visible = false;
+            this.gridPuntos.Columns["PUNTOSPARTIDA"].Visible = false;
+        }
     }
+
+
 }
 

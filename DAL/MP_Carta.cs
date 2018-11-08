@@ -17,14 +17,14 @@ namespace DAL
         {
             List<BE.Carta> cartas = new List<BE.Carta>();
             acceso.Abrir();
-            DataTable tabla = acceso.Leer("ConsultarCartas", null);
+            DataTable tabla = acceso.Leer("ListarCartas", null);
             acceso.Cerrar();
             foreach (DataRow registro in tabla.Rows)
             {
                 BE.Carta carta = new BE.Carta();
                 carta.ID = int.Parse(registro["id"].ToString());
                 carta.NUMERO = int.Parse(registro["numero"].ToString());
-                carta.PALO = registro["palo"].ToString();
+                carta.PALO = registro["paloNombre"].ToString();
                 cartas.Add(carta);
             }
 

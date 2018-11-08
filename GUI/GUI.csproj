@@ -89,5 +89,55 @@
       <Name>BLL</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="img\basto\1.jpg" />
+    <Content Include="img\basto\10.jpg" />
+    <Content Include="img\basto\11.jpg" />
+    <Content Include="img\basto\12.jpg" />
+    <Content Include="img\basto\2.jpg" />
+    <Content Include="img\basto\3.jpg" />
+    <Content Include="img\basto\4.jpg" />
+    <Content Include="img\basto\5.jpg" />
+    <Content Include="img\basto\6.jpg" />
+    <Content Include="img\basto\7.jpg" />
+    <Content Include="img\basto\8.jpg" />
+    <Content Include="img\basto\9.jpg" />
+    <Content Include="img\copa\1.jpg" />
+    <Content Include="img\copa\10.jpg" />
+    <Content Include="img\copa\11.jpg" />
+    <Content Include="img\copa\12.jpg" />
+    <Content Include="img\copa\2.jpg" />
+    <Content Include="img\copa\3.jpg" />
+    <Content Include="img\copa\4.jpg" />
+    <Content Include="img\copa\5.jpg" />
+    <Content Include="img\copa\6.jpg" />
+    <Content Include="img\copa\7.jpg" />
+    <Content Include="img\copa\8.jpg" />
+    <Content Include="img\copa\9.jpg" />
+    <Content Include="img\espada\1.jpg" />
+    <Content Include="img\espada\10.jpg" />
+    <Content Include="img\espada\11.jpg" />
+    <Content Include="img\espada\12.jpg" />
+    <Content Include="img\espada\2.jpg" />
+    <Content Include="img\espada\3.jpg" />
+    <Content Include="img\espada\4.jpg" />
+    <Content Include="img\espada\5.jpg" />
+    <Content Include="img\espada\6.jpg" />
+    <Content Include="img\espada\7.jpg" />
+    <Content Include="img\espada\8.jpg" />
+    <Content Include="img\espada\9.jpg" />
+    <Content Include="img\oro\1.jpg" />
+    <Content Include="img\oro\10.jpg" />
+    <Content Include="img\oro\11.jpg" />
+    <Content Include="img\oro\12.jpg" />
+    <Content Include="img\oro\2.jpg" />
+    <Content Include="img\oro\3.jpg" />
+    <Content Include="img\oro\4.jpg" />
+    <Content Include="img\oro\5.jpg" />
+    <Content Include="img\oro\6.jpg" />
+    <Content Include="img\oro\7.jpg" />
+    <Content Include="img\oro\8.jpg" />
+    <Content Include="img\oro\9.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
